@@ -1,0 +1,173 @@
+/* common css start here */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+html{
+    font-size: 10px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --navcolor: rgba(255, 255, 255, 0.5);
+    --asidecolor: rgba(255, 255, 255, 0.7);
+    --sidebarcolor: rgba(255, 255, 255, 0.1);
+    --primarycolor: white;
+    --secondarycolor: black;
+}
+.darkmode{
+    --navcolor: rgba(0, 0, 0, 0.832);
+    --asidecolor: rgba(12, 12, 12, 0.951);
+    --sidebarcolor: rgba(29, 28, 28, 0.2);
+    --primarycolor: black;
+    --secondarycolor: white;
+}
+body{
+    font-family: arial;
+    min-height: 100vh;
+    background: url(../Images/lightmode.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+body.darkmode{
+    background: url(../Images/darkmode.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.align-center{
+    align-items: center;
+}
+.justify-contant{
+    justify-content: center;
+}
+/* common css ends here */
+
+/* nav bar start */
+nav{
+    background-color: var(--navcolor);
+    padding: 2rem 0;
+    transition: 0.5s;
+}
+nav .sidebarBtn{
+    width: 50%;
+    color: var(--secondarycolor);
+    display: inline-block;
+    font-size: 4rem;
+    padding: 0.8rem ;
+}
+nav .sidebarBtn i{
+    cursor: pointer;
+}
+nav p{
+    width: 40%;
+    text-align: right;
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondarycolor);
+}
+nav button{
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    background-color: var(--secondarycolor);
+    color: var(--primarycolor);
+    border: none;
+    border-radius: 50%;
+    margin-left: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+nav button span{
+    width: 100%;
+    height: 100%;
+    line-height: 3rem;
+    display: block;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+nav button .sun{
+    background-color: #f8c621;
+}
+.darkmode nav button .moon{
+    margin-top: -3rem;
+}
+/* nav bar end */
+/* sidebar starts */
+.sidebar{
+    background-color: var(--sidebarcolor);
+    backdrop-filter: blur(0.2rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.10s;
+}
+.sidebar.active{
+    opacity: 1;
+    visibility: visible;
+}
+aside{
+    max-width: 35rem;
+    background-color: var(--asidecolor);
+    height: 100%;
+    padding: 10rem 0;
+    position: relative;
+    transform: translateX(-100%);
+    transition: 0.30s;
+}
+.sidebar.active aside{
+    transform: translateX(0);
+}
+.sidebar li a{
+    width: 100%;
+    color: var(--secondarycolor);
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2rem 3rem;
+    transition: 0.35s;
+}
+.sidebar li:hover a{
+    background-color: #8621f8;
+}
+.sidebar li a i{
+    padding-right: 2rem;
+}
+aside .crossbtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+    color: red;
+    margin: 1rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    cursor: pointer;
+    transition: 0.35s;
+    border-radius: .5rem;
+}
+aside .crossbtn:hover{
+    background-color: red;
+    color: white;
+}
+/* sidebar ends */
